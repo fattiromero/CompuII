@@ -1,0 +1,166 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body::before{
+    content: "";
+    position: fixed; /*Mantiene el findo haciendo scrooll*/
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /*Detras del texto*/
+    background-image: url('img/codeGeass.jpg');
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+}
+
+.encabezado{
+    text-align: center;
+    font-family: fantasy;
+    font-size: 50px;
+    color: #FAE8FC;
+}
+
+nav ul{
+    list-style: none;
+    margin: 30px auto;
+    padding: 0 auto;
+    width: 90%;
+    max-width: 900px;
+    display: flex; /* Coloca lado a lado*/
+    justify-content: center;
+    background-color: rgba(15, 15, 15, 0.55);
+    border-radius: 8px;
+    overflow: hidden; /*corta el contenido*/
+    position: relative;
+}
+
+nav a{
+    display: block;
+    padding: 15px 20px; /*Botones grande*/
+    margin: 0 30px; /*separacion de botones*/
+    color: #FAE8FC;
+    text-decoration: none; /*quitamos subrayado*/
+}
+
+nav a:hover{
+    background-color: #000;
+
+}
+
+.carrusel{
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: 500px;
+    overflow: hidden; /*recorta una imagen*/
+    margin:0 auto;
+}
+
+.carrusel .deslizar{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: crossfade 14s infinite;
+}
+
+.carrusel .deslizar:nth-child(1){
+    animation-delay: 0s;
+}
+
+.carrusel .deslizar:nth-child(2){
+    animation-delay: 4s;
+}
+
+.carrusel .deslizar:nth-child(3){
+    animation-delay: 8s;
+}
+
+.carrusel .deslizar:nth-child(4){
+    animation-delay: 12s;
+}
+
+.carrusel .deslizar:nth-child(5){
+    animation-delay: 16s;
+}
+
+.carrusel .deslizar:nth-child(6){
+    animation-delay: 20s;
+}
+
+/*ANimacion del carrusel*/
+@keyframes crossfade {
+    0% {opacity: 0;}
+    10% {opacity: 1;}
+    33% {opacity: 1;}
+    43% {opacity: 1;}
+    100% {opacity: 1;}
+}
+
+.contenedor1{
+    display: flex;
+    gap: 10px; /*Separacion entre uno y otrp*/
+    margin:20px 40px;
+    align-items:  flex-start;
+}
+
+.principal {
+    background-color: rgba(15, 15, 15, 0.90);
+    color: #FAE8FC;
+    flex: 2;
+    margin: 20px 40px;
+    width: 50%;
+}
+
+.secundario {
+    background-color: rgba(15, 15, 15, 0.90);
+    color: #FAE8FC;
+    flex: 1;
+    margin:20px 40px;
+    width: 50%;
+}
+
+.contenedor2{
+    margin: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.recom1, .recom3, .recom5{
+    background-color: rgba(15, 15, 15, 0.90);
+    color: #FAE8FC;
+    border-radius: 8px;
+    padding: 20px;
+    width: 70%;
+    box-sizing: border-box; /*havce que no aumente*/
+    align-self: flex-start;
+}
+
+.recom2, .recom4{
+    background-color: rgba(15, 15, 15, 0.90);
+    color: #FAE8FC;
+    border-radius: 8px;
+    padding: 20px;
+    width: 70%;
+    box-sizing: border-box;
+    align-self: flex-end;
+}
+
+.recom1 img, .recom3 img, .recom5 img{
+    display: block;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.recom2 img, .recom4 img{
+    display: block;
+    margin-left: 20px;
+    margin-right: auto;
+}
