@@ -133,6 +133,18 @@ nav a:hover{
     gap: 20px;
 }
 
+.articulo h1, .articulo h2{
+    text-align: center;
+}
+
+.contenedor2 p {
+    text-align: justify;
+}
+
+.contenedor2 h1, .contenedor2 h2, .contenedor2 h3{
+    text-align: center;
+}
+
 .recom1, .recom3, .recom5{
     background-color: rgba(15, 15, 15, 0.90);
     color: #FAE8FC;
@@ -141,6 +153,10 @@ nav a:hover{
     width: 70%;
     box-sizing: border-box; /*havce que no aumente*/
     align-self: flex-start;
+    display: flex; /*coloca la imagen y eltexto al lado*/
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
 }
 
 .recom2, .recom4{
@@ -151,16 +167,101 @@ nav a:hover{
     width: 70%;
     box-sizing: border-box;
     align-self: flex-end;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    gap: 20px;
 }
 
-.recom1 img, .recom3 img, .recom5 img{
-    display: block;
-    margin-left: auto;
-    margin-right: 20px;
+
+.recom1 img, .recom2 img, .recom3 img, .recom4 img, .recom5 img {
+    width: 500px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0; /*evita que se haga más pequeña la imagen*/
+    margin: auto;
 }
 
-.recom2 img, .recom4 img{
+.audio{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; /*para telefonos*/
+}
+
+.opening{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.ending{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contenedor3 {
+    display: flex;
+    gap: 10px; /*Separacion entre uno y otrp*/
+    margin:20px 40px;
+    align-items:  flex-start;
+}
+
+.contenedor3 h1, .contenedor3 p {
+    text-align: center;
+}
+
+
+.formulario {
+    background-color: rgba(15, 15, 15, 0.90);
+    color: #FAE8FC;
+    flex: 2;
+    width: 100%;
+    margin:20px 40px;
+    padding: 30px;
+    border-radius: 8px;
+    align-self: center;
+}
+
+.mapa {
+    background-color: rgba(15, 15, 15, 0.90);
+    color: #FAE8FC;
+    flex: 1;
+    margin:20px 40px;
+    width: 100%;
+}
+
+.agrupar {
+    display: flexbox;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.agrupar label {
+    margin-bottom: 10px;
+}
+
+.agregar input {
+    border: 2px solid #8807A6;
+    border-radius: 8px;
+    outline: #7379E6;    
+}
+
+.formulario input[type="submit"] {
     display: block;
-    margin-left: 20px;
-    margin-right: auto;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 8px;
+    background: #3d0747;
+    color: #FAE8FC;
+}
+
+.formulario input[type="submit"]:hover {
+    background-color: #E3D0F5;
+    color:#000;
 }
