@@ -153,8 +153,32 @@
         </div>
         
         
-        <footer>
-            <p>Siguenos en...</p>
-        </footer>
+        <div class="pie">
+            <footer>
+
+                <p>Visualizaciones: <strong id="visitasPagina"></strong> veces</p>
+                
+                <script>
+                    document.addEventListener("DOMContentLoaded", () => {  /*Carga primero la pagina antes de contra*/
+                        const misSitio = "anime";
+                        const miPagina = "index"
+                        fetch(`https://counterapi.dev{miSitio}/${miPagina}/increment`)
+                        .then(response => {
+                            if(!response.ok) throw new Error("Error en la respuesta del Servidor");
+                            return response.json();
+                        })
+                        .then(data => {
+                            document.getElementById("visitasPagina").textContent = data.count.toLocaleString();
+                        })
+                        .catch(error => {
+                            console.error("No se puede registrar la visita: ", error);
+                            document.getElementById("visitasPagina").textContent = "1";
+                        });
+                    }); 
+                </script>
+
+            </footer>
+        </div>
+
     </body>
 </html>

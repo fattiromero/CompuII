@@ -61,15 +61,22 @@ nav a:hover{
     margin:0 auto;
 }
 
+.carrusel .imagenesCarrusel{
+    width: 100%;
+    height: 100%;
+}
+
 .carrusel .deslizar{
     position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    animation: crossfade 14s infinite;
+    /*animation: crossfade 14s infinite;*/
+    transition: opacity 0.8s ease-in-out; 
 }
 
+/*
 .carrusel .deslizar:nth-child(1){
     animation-delay: 0s;
 }
@@ -92,15 +99,58 @@ nav a:hover{
 
 .carrusel .deslizar:nth-child(6){
     animation-delay: 20s;
+}*/
+
+#img1:checked ~ .imagenesCarrusel .deslizar:nth-child(1),
+#img2:checked ~ .imagenesCarrusel .deslizar:nth-child(2),
+#img3:checked ~ .imagenesCarrusel .deslizar:nth-child(3),
+#img4:checked ~ .imagenesCarrusel .deslizar:nth-child(4),
+#img5:checked ~ .imagenesCarrusel .deslizar:nth-child(5),
+#img6:checked ~ .imagenesCarrusel .deslizar:nth-child(6) {
+    opacity: 1;
+    z-index: 1;
 }
 
-/*ANimacion del carrusel*/
+/*ANimacion del carrusel
 @keyframes crossfade {
     0% {opacity: 0;}
     10% {opacity: 1;}
     33% {opacity: 1;}
     43% {opacity: 1;}
     100% {opacity: 1;}
+}*/
+
+.carrusel .con {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: none;
+    justify-content: space-between;
+    padding: 0 15px;
+    box-sizing:  border-box;
+    z-index: 10;
+}
+
+#img1:checked ~ .c1,
+#img2:checked ~ .c2,
+#img3:checked ~ .c3,
+#img4:checked ~ .c4,
+#img5:checked ~ .c5,
+#img6:checked ~ .c6 {
+    display: flex;
+}
+
+.anterior, .siguiente {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #FAE8FC;
+    padding: 12px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.anterior:hover, .siguiente:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .contenedor1{
@@ -221,11 +271,13 @@ nav a:hover{
     background-color: rgba(15, 15, 15, 0.90);
     color: #FAE8FC;
     flex: 2;
+    max-width: 700px;
     width: 100%;
     margin:20px 40px;
     padding: 30px;
     border-radius: 8px;
-    align-self: center;
+    /*align-self: center;*/
+    box-sizing: border-box; /*evita que rompa el ancho*/
 }
 
 .mapa {
@@ -237,7 +289,7 @@ nav a:hover{
 }
 
 .agrupar {
-    display: flexbox;
+    display: flex;
     flex-direction: column;
     margin-bottom: 30px;
 }
@@ -246,14 +298,20 @@ nav a:hover{
     margin-bottom: 10px;
 }
 
-.agregar input {
+.agrupar input[type="text"], .agrupar textarea {
     border: 2px solid #8807A6;
     border-radius: 8px;
     outline: #7379E6;    
 }
 
+.agrupar textarea {
+    height: 120px;
+    resize: vertical;
+}
+
 .formulario input[type="submit"] {
     display: block;
+    width: 100%;
     margin: 10px auto;
     padding: 10px;
     border-radius: 8px;
@@ -264,4 +322,13 @@ nav a:hover{
 .formulario input[type="submit"]:hover {
     background-color: #E3D0F5;
     color:#000;
+    transform: translateY(-2px);
+}
+
+.pie {
+    background-color: rgba(15, 15, 15, 0.90);
+    color: #FAE8FC;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
 }
