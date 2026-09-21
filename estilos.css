@@ -1,5 +1,5 @@
 * {
-    box-sizing: border-box; /**/
+    box-sizing: border-box; /*evita desbordamientos*/
 }
 
 html, body {
@@ -22,11 +22,18 @@ body::before{
     opacity: 0.8;
 }
 
+img, video, iframe, audio {
+    max-width: 100%;
+    height: auto;
+}
+
 .encabezado{
     text-align: center;
     font-family: fantasy;
-    font-size: 50px;
+    font-size: clamp(28px, 6vw, 50px); /*se adapta al dispositivo*/
     color: #FAE8FC;
+    padding: 10px;
+    margin: 0;
 }
 
 nav ul{
@@ -36,6 +43,7 @@ nav ul{
     width: 90%;
     max-width: 900px;
     display: flex; /* Coloca lado a lado*/
+    flex-wrap: wrap; /*baja el menu en celulares*/
     justify-content: center;
     background-color: rgba(15, 15, 15, 0.55);
     border-radius: 8px;
@@ -60,7 +68,8 @@ nav a:hover{
     position: relative;
     width: 100%;
     max-width: 900px;
-    height: 500px;
+    height: 50vh;
+    max-height: 600px;
     overflow: hidden; /*recorta una imagen*/
     margin:0 auto;
 }
@@ -159,9 +168,12 @@ nav a:hover{
 
 .contenedor1{
     display: flex;
+    /*flex-direction: column;*/
     gap: 10px; /*Separacion entre uno y otrp*/
     margin:20px 40px;
     align-items:  flex-start;
+    width: 90%;
+    max-width: 2000px;
 }
 
 .principal {
@@ -235,6 +247,10 @@ nav a:hover{
     object-fit: cover;
     flex-shrink: 0; /*evita que se haga más pequeña la imagen*/
     margin: auto;
+}
+
+.textoRecom {
+    width: 100%;
 }
 
 .audio{
@@ -327,6 +343,28 @@ nav a:hover{
     background-color: #E3D0F5;
     color:#000;
     transform: translateY(-2px);
+}
+
+.conTabla {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.conVideo, .mapa {
+    position:relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    margin: 20px 0;
+}
+
+.conVideo iframe, .mapa iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .pie {
