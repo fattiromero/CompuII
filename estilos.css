@@ -5,13 +5,14 @@
 html, body {
     height: 100%;
     margin: 0;
+    padding: 0;
 }
 
 body::before{
     content: "";
     position: fixed; /*Mantiene el findo haciendo scrooll*/
-    top: 0%;
-    left: 0%;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     z-index: -1; /*Detras del texto*/
@@ -53,8 +54,8 @@ nav ul{
 
 nav a{
     display: block;
-    padding: 15px 20px; /*Botones grande*/
-    margin: 0 30px; /*separacion de botones*/
+    padding: 12px 16px; /*Botones grande*/
+    margin: 5px; /*separacion de botones*/
     color: #FAE8FC;
     text-decoration: none; /*quitamos subrayado*/
 }
@@ -66,10 +67,11 @@ nav a:hover{
 
 .carrusel{
     position: relative;
-    width: 100%;
+    width: 90%;
     max-width: 900px;
     height: 50vh;
     max-height: 600px;
+    min-height: 220px;
     overflow: hidden; /*recorta una imagen*/
     margin:0 auto;
 }
@@ -81,6 +83,8 @@ nav a:hover{
 
 .carrusel .deslizar{
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -157,9 +161,10 @@ nav a:hover{
 .anterior, .siguiente {
     background-color: rgba(0, 0, 0, 0.5);
     color: #FAE8FC;
-    padding: 12px 16px;
+    padding: 10px 14px;
     cursor: pointer;
     border-radius: 5px;
+    user-select: none;
 }
 
 .anterior:hover, .siguiente:hover {
@@ -190,6 +195,23 @@ nav a:hover{
     flex: 1;
     margin:20px 40px;
     width: 50%;
+}
+
+@media (min-width: 768px) {
+    .contenedor1 {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .principal {
+        flex: 2;
+        width: auto;
+    }
+
+    .secundario {
+        flex: 1;
+        width: auto;
+    }
 }
 
 .contenedor2{
