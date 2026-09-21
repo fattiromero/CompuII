@@ -23,7 +23,7 @@ body::before{
     opacity: 0.8;
 }
 
-img, video, iframe, audio {
+img, video, iframe/*, audio */{
     max-width: 100%;
     height: auto;
 }
