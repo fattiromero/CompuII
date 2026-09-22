@@ -398,10 +398,11 @@ nav a:hover{
 
 .conVideo {
     position:relative;
+    width: 80%;
     height: 0;
+    padding-bottom: 56.25%;
     overflow: hidden;
-    max-width: 100%;
-    margin: 20px 0;
+    margin: 20px auto;
 }
 
 .conVideo iframe, .mapa iframe{
