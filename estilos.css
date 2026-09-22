@@ -62,7 +62,10 @@ nav a{
 
 nav a:hover{
     background-color: #000;
+}
 
+h1, h2, h3 {
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .carrusel{
@@ -461,8 +464,6 @@ nav a:hover{
     }
 }
 
-
-
 .pie {
     background-color: rgba(15, 15, 15, 0.90);
     color: #FAE8FC;
@@ -470,3 +471,5 @@ nav a:hover{
     padding: 20px;
     text-align: center;
 }
+
+
